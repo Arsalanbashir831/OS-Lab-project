@@ -120,7 +120,7 @@ void makeDirectory(char *newDirectory)
 void removeDirectory(char *directory)
 {
     int retval;
-    retval = _rmdir("test");
+    retval = _rmdir(directory);
     if (retval == -1)
     {
         // output a general error message
@@ -197,8 +197,6 @@ void grep(){
 int main(int argc, char const *argv[])
 {
     printf("Welcome to the Arsalan Shell : \n ");
-    printf("\n The cmds implemented are :\n");
-    printf("\n 1-ls \n 2- ls -p(list the file/direct of specific path) \n 3- ls -d(list only directories) \n 4-rm \n 5-mkdir \n 6-cd \n 7- touch \n 8- cat \n 9- grep -c \n");
     char input[100];
     while (strcmp(input, "exit") != 0)
     {
@@ -260,7 +258,8 @@ int main(int argc, char const *argv[])
         }
 
         printf("\n");
-        printf("==============Exit from the shell =========\n");
+       
     }
+     printf("==============Exit from the shell =========\n");
     return 0;
 }
